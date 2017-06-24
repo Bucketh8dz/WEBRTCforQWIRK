@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+This work has been done by using webRTC experiment work done by :
+ Muaz Khan         - www.MuazKhan.com
+ MIT License       - www.WebRTC-Experiment.com/licence
+ Experiments       - github.com/muaz-khan/WebRTC-Experiment
+ 
+Lot of changes has been done on the initial libraries and also on implementations, thanks for considering.
+-->
+    <head>
+			<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+			<script src="https://cdn.webrtc-experiment.com/socket.io.js"> </script>
+			<script src="https://cdn.webrtc-experiment.com/firebase.js"> </script>
+			<script src="https://bucketh8dz.github.io/RTCPeerConnection.js"> </script>
+			<script src="https://bucketh8dz.github.io/conference.js"> </script>
+			<script src="https://cdn.webrtc-experiment.com/getMediaElement.min.js"> </script>
+			<script src="https://bucketh8dz.github.io/roomManagement.js"> </script>
+			<style>
+    .none {
+      -webkit-filter: none;
+      filter: none;
+    }
+    .blur {
+      -webkit-filter: blur(3px);
+      filter: blur(3px);
+    }
+    .grayscale {
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+    }
+    .invert {
+      -webkit-filter: invert(1);
+      filter: invert(1);
+    }
+    .sepia {
+      -webkit-filter: sepia(1);
+      filter: sepia(1);
+    }
+
+    button#snapshot {
+      margin: 0 10px 25px 0;
+      width: 110px;
+    }
+
+    video {
+      object-fit: cover;
+    }
+  </style>
+	
+	</head>
+
+    <body>
+        <section class="experiment">
+                <section>
+                    
+                    <button id="setup-new-audio" class="setup">Démarrer une conversation audio</button>
+					<button id="setup-new-room" class="setup">Démarrer une conversation vidéo</button>
+                </section>
+
+                <!-- list of all available conferencing rooms -->
+                <table style="width: 100%;" id="rooms-list">
+				</table>
+
+                <!-- local/remote videos container -->
+				<div id="video-container"></div>
+                <div id="audio-container"></div>
+            </section>
+    </body>
+</html>
